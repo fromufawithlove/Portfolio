@@ -1,6 +1,6 @@
 ## Выбор локации для скважины 
 
-HTML ipynb
+[HTML](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%93%D0%BB%D0%B0%D0%B2%D0%A0%D0%BE%D1%81%D0%9D%D0%B5%D1%84%D1%82%D1%8C/GlavRosNeft.html) [ipynb](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%93%D0%BB%D0%B0%D0%B2%D0%A0%D0%BE%D1%81%D0%9D%D0%B5%D1%84%D1%82%D1%8C/GlavRosNeft.ipynb)
 
 ### Описание проекта
 вы работаете в добывающей компании «ГлавРосГосНефть». Нужно решить, где бурить новую скважину. 
