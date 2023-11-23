@@ -1,6 +1,6 @@
 ## Прогноз оттока клиентов
 
-[HTML]() [ipynb]()
+[HTML](https://github.com/fromufawithlove/data_science_YP/blob/main/%D0%A2%D0%B5%D0%BB%D0%B5%D0%94%D0%BE%D0%BC/teledom.html) [ipynb](https://github.com/fromufawithlove/data_science_YP/blob/main/%D0%A2%D0%B5%D0%BB%D0%B5%D0%94%D0%BE%D0%BC/teledom.ipynb)
 
 ### Описание проекта
 
