@@ -1,6 +1,6 @@
 ## Анализ комментарий для интернет-магазина «Викишоп»
 
-[HTML](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2/ToxicText.html) [ipynb](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2/ToxicText.ipynb)
+[HTML](https://github.com/fromufawithlove/data_science_YP/blob/main/%D0%A5%D0%BB%D0%B5%D0%B1-%D1%81%D0%BE%D0%BB%D1%8C/hleb.html) [ipynb](https://github.com/fromufawithlove/data_science_YP/blob/main/%D0%A5%D0%BB%D0%B5%D0%B1-%D1%81%D0%BE%D0%BB%D1%8C/hleb.ipynb)
 
 ### Описание проекта
 
