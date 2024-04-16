@@ -1,6 +1,6 @@
 ## Дашборд для колл-центра
 
-[Дашборд на Tableu](https://public.tableau.com/views/-_17128196288550/-?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) [Превью в PDF](https://github.com/shatalina/data_science_YP/blob/main/%D0%94%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%BB%D0%BB-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0/%D0%9A%D0%BE%D0%BB%D0%BB-%D1%86%D0%B5%D0%BD%D1%82%D1%80.pdf)
+[Дашборд на Tableau](https://public.tableau.com/views/-_17128196288550/-?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) [Превью в PDF](https://github.com/shatalina/data_science_YP/blob/main/%D0%94%D0%B0%D1%88%D0%B1%D0%BE%D1%80%D0%B4%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%BE%D0%BB%D0%BB-%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0/%D0%9A%D0%BE%D0%BB%D0%BB-%D1%86%D0%B5%D0%BD%D1%82%D1%80.pdf)
 
 ### Описание проекта
 
