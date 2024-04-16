@@ -1,6 +1,6 @@
 ## Прогноз поведения клиентов для "Бета-Банка"
 
-[HTML](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%91%D0%B5%D1%82%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BA/BetaBank.html) [ipynb](https://github.com/fromufawithlove/Portfolio/blob/main/%D0%91%D0%B5%D1%82%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BA/BetaBank.ipynb)
+[HTML](https://github.com/shatalina/data_science_YP/blob/main/%D0%91%D0%B5%D1%82%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BA/BetaBank.html) [ipynb](https://github.com/shatalina/data_science_YP/blob/main/%D0%91%D0%B5%D1%82%D0%B0-%D0%B1%D0%B0%D0%BD%D0%BA/BetaBank.ipynb)
 
 ### Описание проекта
 
