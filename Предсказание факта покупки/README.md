@@ -21,7 +21,7 @@
 - Были исследованы данные
 -  Проверено два способа подготовки данных для обучения моделей 
 - Провели обучение моделей RandomForestClassifier, LogisticRegression  и CatBoostClassifier 
-- Лучшей моделью оказалась LRC c параметрами {'C': 0.9000000000000001, 'class_weight': 'balanced'} 
+- Лучшей моделью оказалась LogisticRegression c параметрами {'C': 0.9000000000000001, 'class_weight': 'balanced'} 
 - Показатели метрик лучшей модели:
 - - 'recall_score' - 0.65
 - - 'precision_score' - 0.45
