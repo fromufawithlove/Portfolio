@@ -17,17 +17,17 @@
    - type - тип программы (курс, специализация, профессия)
    - direction - бизнес юнит (БЮ), направление обучения: Аналитика, Программирование, Дизайн и т.д.
 
-    ![Иллюстрация к проекту](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%A3%D0%BC%D1%81%D0%BA%D1%83%D0%BB/Screenshot_1.jpg)
+![](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%A3%D0%BC%D1%81%D0%BA%D1%83%D0%BB/Screenshot_1.jpg)
 
 
 1. Вывести на экран только запись с  полями последнего заказа и названием купленной программы для каждого пользователя.
 
-SELECT orders.*, programs.name 
-FROM orders
-INNER JOIN programs ON orders.programs_id = programs.id
-WHERE buy_date =
-    (SELECT MAX(buy_date) FROM orders AS ab WHERE orders.user_id=ab.user_id)
-ORDER BY user_id;
+SELECT orders.*, programs.name  
+FROM orders  
+INNER JOIN programs ON orders.programs_id = programs.id  
+WHERE buy_date =  
+    (SELECT MAX(buy_date) FROM orders AS ab WHERE orders.user_id=ab.user_id)  
+ORDER BY user_id;  
 
 2. С помощью запроса проверить таблицу orders на дубликаты записей о покупках.
 
