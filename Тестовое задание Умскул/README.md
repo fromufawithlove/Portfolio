@@ -125,8 +125,9 @@ print(day_of_week("30-07-2024"))  # Должно вернуть "Вторник"
 
 from datetime  
 import datetime  
+
 def day_of_week(date_string):  
-     week = {  
+    week = {  
             0: "Понедельник",  
             1: "Вторник",  
             2: "Среда",  
