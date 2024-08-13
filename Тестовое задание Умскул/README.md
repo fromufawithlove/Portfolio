@@ -79,62 +79,63 @@ ORDER BY count_users DESC;
 
 #### 1. Напишите функцию, которая принимает список словарей, представляющих студентов и их оценки за экзамены. Функция должна вернуть список студентов, у которых средняя оценка выше определенного порога.
 
-students = [
-    {"name": "Иван", "grades": [5, 4, 4, 5]},
-    {"name": "Мария", "grades": [3, 3, 4, 3]},
-    {"name": "Петр", "grades": [4, 4, 5, 5]}
+students = [  
+    {"name": "Иван", "grades": [5, 4, 4, 5]},  
+    {"name": "Мария", "grades": [3, 3, 4, 3]},  
+    {"name": "Петр", "grades": [4, 4, 5, 5]}  
 ]
 
-def top_students(students, threshold):
-    # Ваш код здесь
-    pass
+def top_students(students, threshold):  
+    # Ваш код здесь  
+    pass  
 
 print(top_students(students, 4))  # Должно вернуть ["Иван", "Петр"]
 
 #### Ответ:
 
-students = [
-    {"name": "Иван", "grades": [5, 4, 4, 5]},
-    {"name": "Мария", "grades": [3, 3, 4, 3]},
-    {"name": "Петр", "grades": [4, 4, 5, 5]}
+students = [  
+    {"name": "Иван", "grades": [5, 4, 4, 5]},  
+    {"name": "Мария", "grades": [3, 3, 4, 3]},  
+    {"name": "Петр", "grades": [4, 4, 5, 5]}  
 ]
 
 
-def top_students(students, threshold):
-    array = []
+def top_students(students, threshold):  
+    array = []  
     
-    for i in range(0, len(students)):
-        if sum(students[i]['grades'])/len(students[i]['grades']) >  threshold:      
-           array.append(students[i]["name"])
-    return array               
+    for i in range(0, len(students)):  
+        if sum(students[i]['grades'])/len(students[i]['grades']) >  threshold:  
+           array.append(students[i]["name"])  
+    return array  
         
 
 print(top_students(students, 4))  # Должно вернуть ["Иван", "Петр"]
 
 #### 2. Напишите функцию, которая принимает строку, представляющую дату в формате "ДД-ММ-ГГГГ", и возвращает название дня недели для этой даты.
 
-import datetime
+import datetime  
 
-def day_of_week(date_string):
-    # Ваш код здесь
-    pass
+def day_of_week(date_string):  
+    # Ваш код здесь  
+    pass  
 
 print(day_of_week("30-07-2024"))  # Должно вернуть "Вторник"
 
 #### Ответ:
 
-from datetime import datetime
-def day_of_week(date_string):    
-     week = {
-            0: "Понедельник",            
-            1: "Вторник",
-            2: "Среда",            
-            3: "Четверг",
-            4: "Пятница",            
-            5: "Суббота",
-            6: "Воскресенье" }
+from datetime  
+import datetime  
+def day_of_week(date_string):  
+     week = {  
+            0: "Понедельник",  
+            1: "Вторник",  
+            2: "Среда",  
+            3: "Четверг",  
+            4: "Пятница",  
+            5: "Суббота",  
+            6: "Воскресенье"}  
             
-    return week[datetime.strptime(date_string,"%d-%m-%Y").weekday()]
+    return week[datetime.strptime(date_string,"%d-%m-%Y").weekday()]  
     
 print(day_of_week("30-07-2024"))
 
