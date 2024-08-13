@@ -31,48 +31,48 @@ ORDER BY user_id;
 
 2. С помощью запроса проверить таблицу orders на дубликаты записей о покупках.
 
-SELECT  user_id, programs_id, order_date, buy_date, state, order_sum, count(*)
-FROM    orders
-GROUP BY user_id, programs_id, order_date, buy_date, state, order_sum
-ORDER BY user_id, programs_id, order_date, buy_date, state, order_sum; 
+SELECT  user_id, programs_id, order_date, buy_date, state, order_sum, count(*)  
+FROM    orders  
+GROUP BY user_id, programs_id, order_date, buy_date, state, order_sum  
+ORDER BY user_id, programs_id, order_date, buy_date, state, order_sum;  
 
 Выведет таблицу orders со столбцом - количеством упоминаний в таблице.
 
 3. Используя запрос, найти пятое по сумме продаж направление обучения.
 
-WITH sessions AS
- (SELECT SUM(order_sum) AS sum, programs.direction,
-   ROW_NUMBER() OVER (ORDER BY SUM(order_sum) DESC) AS rn
-  FROM orders
-  INNER JOIN programs ON orders.programs_id = programs.id
-  GROUP BY  programs.direction
-  ORDER BY sum DESC
-  LIMIT 5)
-SELECT *
-FROM sessions
-WHERE rn=5;
+WITH sessions AS  
+  (SELECT SUM(order_sum) AS sum, programs.direction,  
+  ROW_NUMBER() OVER (ORDER BY SUM(order_sum) DESC) AS rn  
+  FROM orders  
+  INNER JOIN programs ON orders.programs_id = programs.id  
+  GROUP BY  programs.direction  
+  ORDER BY sum DESC  
+  LIMIT 5)  
+SELECT *  
+FROM sessions  
+WHERE rn=5;  
 
 Выведет сумму сбора, название направления, место в рейтинге.
 
 4. Подсчитать распределение количества клиентов по 5ти бинам по сумме оплаты по направлению “Аналитика” за 4й квартал 2023 года (использовать следующие бины меньше 50000, 50000-100000, 100000-150000, 150000-200000, больше 200000).
 
-SELECT COUNT(a.user_id) as count_users,
-       CASE 
-       WHEN a.total_sum < 50000 THEN '<50000'
-       WHEN a.total_sum >= 50000 AND a.total_sum < 100000 THEN '50000-100000'
-       WHEN a.total_sum >= 100000 AND a.total_sum < 150000 THEN '100000-150000'
-       WHEN a.total_sum >= 150000 AND a.total_sum < 200000 THEN '150000-200000'
-       WHEN a.total_sum >= 200000 THEN '200000>'
-       END AS bin
-FROM
-   (SELECT user_id, SUM(order_sum) as total_sum
-   FROM orders
-   INNER JOIN programs ON orders.programs_id = programs.id
-   WHERE programs.direction = 'Analytics' AND buy_date BETWEEN '01-10-2023' AND'31-12-2023'
-   GROUP BY user_id
-   ORDER BY total_sum DESC) AS a
-GROUP BY bin
-ORDER BY count_users DESC;
+SELECT COUNT(a.user_id) as count_users,  
+       CASE  
+       WHEN a.total_sum < 50000 THEN '<50000'  
+       WHEN a.total_sum >= 50000 AND a.total_sum < 100000 THEN '50000-100000'  
+       WHEN a.total_sum >= 100000 AND a.total_sum < 150000 THEN '100000-150000'  
+       WHEN a.total_sum >= 150000 AND a.total_sum < 200000 THEN '150000-200000'  
+       WHEN a.total_sum >= 200000 THEN '200000>'  
+       END AS bin  
+FROM  
+   (SELECT user_id, SUM(order_sum) as total_sum  
+   FROM orders  
+   INNER JOIN programs ON orders.programs_id = programs.id  
+   WHERE programs.direction = 'Analytics' AND buy_date BETWEEN '01-10-2023' AND'31-12-2023'  
+   GROUP BY user_id  
+   ORDER BY total_sum DESC) AS a  
+GROUP BY bin  
+ORDER BY count_users DESC;  
 
 
 ### Python
