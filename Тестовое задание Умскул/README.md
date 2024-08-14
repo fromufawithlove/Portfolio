@@ -68,12 +68,67 @@ FROM
    (SELECT user_id, SUM(order_sum) as total_sum  
    FROM orders  
    INNER JOIN programs ON orders.programs_id = programs.id  
-   WHERE programs.direction = 'Analytics' AND buy_date BETWEEN '01-10-2023' AND'31-12-2023'  
+   WHERE programs.direction = 'Аналитика' AND buy_date BETWEEN '01-10-2023' AND'31-12-2023'  
    GROUP BY user_id  
    ORDER BY total_sum DESC) AS a  
 GROUP BY bin  
 ORDER BY count_users DESC;  
 
+#### 5. Рассчитать нарастающим итогом, как увеличивалось кол-во проданных программ каждый месяц за 2023 год с разбивкой по направлениям обучения  “Программирование” и “Аналитика”. Дополнить расчет процентом  прироста по месяцам год к году (YoY).
+
+SELECT  
+  now_year.month_buy, 
+  now_year.year_buy, 
+  now_year.direction,  
+  now_year.count_orders,  
+  now_year.count_cum,  
+  ROUND((now_year.count_cum/last_year.count_cum -1)*100, 2) AS growth 
+FROM   
+(WITH a AS(  
+    SELECT EXTRACT(MONTH FROM buy_date) as month_buy, EXTRACT(YEAR FROM buy_date) as year_buy, programs.direction, COUNT(order_id) as count_orders  
+    FROM orders  
+    INNER JOIN programs ON orders.programs_id = programs.id   
+    WHERE programs.direction IN ('Аналитика', 'Программирование') AND EXTRACT(YEAR FROM buy_date) = '2022'   
+    GROUP BY EXTRACT(MONTH FROM buy_date), EXTRACT(YEAR FROM buy_date), programs.direction   
+    )
+    SELECT *,  
+    SUM(a.count_orders) OVER (PARTITION BY a.direction ORDER BY a.month_buy) AS count_cum  
+    FROM a) AS last_year  
+FULL OUTER JOIN  
+
+(WITH a AS(  
+    SELECT EXTRACT(MONTH FROM buy_date) as month_buy, EXTRACT(YEAR FROM buy_date) as year_buy, programs.direction, COUNT(order_id) as count_orders  
+    FROM orders  
+    INNER JOIN programs ON orders.programs_id = programs.id  
+    WHERE programs.direction IN ('Аналитика', 'Программирование') AND EXTRACT(YEAR FROM buy_date) = '2023'  
+    GROUP BY EXTRACT(MONTH FROM buy_date), EXTRACT(YEAR FROM buy_date), programs.direction  
+    )  
+    SELECT *,  
+    SUM(a.count_orders) OVER (PARTITION BY a.direction ORDER BY a.month_buy)  
+     AS count_cum   
+     FROM a) AS now_year  
+
+ON last_year.month_buy = now_year.month_buy  AND last_year.direction = now_year.direction  
+ORDER BY now_year.direction, now_year.month_buy;  
+
+#### 6. Есть ли разница в селектах?
+
+запрос №1  
+
+SELECT *  
+FROM TableA  
+LEFT JOIN TableB ON TableA.id = TableB.a_id AND TableB.column = 'value';  
+
+запрос №2  
+
+SELECT *  
+FROM TableA  
+LEFT JOIN TableB ON TableA.id = TableB.a_id  
+WHERE TableB.column = 'value';  
+
+#### Ответ:
+
+Разница есть. Первый вариант сохранит все строки Таблицы А, заполнив null значения отличные от value. Второй вариант выведет только те строки, где условие по value выполнено.
 
 ### Python
 
