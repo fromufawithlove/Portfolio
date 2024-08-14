@@ -83,7 +83,9 @@ SELECT
   now_year.count_orders,  
   now_year.count_cum,  
   ROUND((now_year.count_cum/last_year.count_cum -1)*100, 2) AS growth 
+
 FROM   
+
 (WITH a AS(  
     SELECT EXTRACT(MONTH FROM buy_date) as month_buy, EXTRACT(YEAR FROM buy_date) as year_buy, programs.direction, COUNT(order_id) as count_orders  
     FROM orders  
@@ -94,6 +96,7 @@ FROM
     SELECT *,  
     SUM(a.count_orders) OVER (PARTITION BY a.direction ORDER BY a.month_buy) AS count_cum  
     FROM a) AS last_year  
+    
 FULL OUTER JOIN  
 
 (WITH a AS(  
