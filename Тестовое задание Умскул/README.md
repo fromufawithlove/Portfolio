@@ -267,6 +267,8 @@ EdTech платформа запускает новую функцию "Перс
 #### Ответ
 
 По ссылке
+[HTML](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%A3%D0%BC%D1%81%D0%BA%D1%83%D0%BB/umschool_test.html) 
+[ipynb](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%A3%D0%BC%D1%81%D0%BA%D1%83%D0%BB/umschool_test.ipynb)
 
 
 
