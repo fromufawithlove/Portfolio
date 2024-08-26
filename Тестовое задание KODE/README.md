@@ -25,9 +25,148 @@
 
 ### Ответ
 
-![](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%A3%D0%BC%D1%81%D0%BA%D1%83%D0%BB/Screenshot_1.jpg)
+![](https://github.com/shatalina/data_science_YP/blob/main/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20KODE/taxi.jpg)
 
- REST запросы:
+ REST запросы:  
+
+- Редактирование данных пользователя
+
+/users/:id  PUT
+
+surname     string
+name        string
+email       string
+phone       string
+city        string
+dateofbirth string
+
+- Авторизация  
+
+/auth/signup POST  
+
+email    string
+password string  
+
+- Выход из системы
+
+/auth/sighout POST
+
+- Просмотр истории заказов
+
+/orders/history GET
+
+orders              array  
+orders[].id         string  
+orders[].datetime   datetime  
+orders[].adressout  array  
+orders[].adressin   array  
+orders[].tariff     string  
+orders[].animal     boolean  
+orders[].child      string  
+orders[].options    array  
+orders[].comments   string  
+orders[].cost       number  
+orders[].carnumber  string  
+orders[].cardriver  string  
+orders[].carcolor   string  
+orders[].carmodel   string  
+orders[].payment    string  
+orders[].status     boolean  
+orders[].score      number  
+orders[].tips       number  
+
+
+- Обращение в техподдержку
+
+запрос  
+/support/ POST
+
+id         string  
+datetime   datetime  
+theme      string  
+message    string  
+
+ответ  
+/support/:id GET  
+
+id         string  
+datetime   datetime  
+theme      string  
+answer     string  
+
+- Заказ такси
+
+Формирование заказа  
+
+/orders/  POST 
+
+id         string  
+datetime   datetime  
+adressout  array  
+adressin   array  
+tariff     string  
+animal     boolean  
+child      string  
+options    array  
+comments   string  
+payment    string  
+
+- Предложение сервиса
+
+/orders/:id/preview  GET  
+
+id         string  
+datetime   datetime  
+adressout  array  
+adressin   array  
+tariff     string  
+animal     boolean  
+child      string  
+options    array  
+comments   string  
+payment    string  
+cost       number  
+
+- Согласие пользователя на заказ
+  
+/orders/:id/preview PUT  
+
+status     boolean  
+
+- Детали поездки
+
+/orders/:id  GET  
+
+id         string  
+datetime   datetime  
+adressout  array  
+adressin   array  
+tariff     string  
+animal     boolean  
+child      string  
+options    array  
+comments   string  
+payment    string  
+cost       number  
+carnumber  string  
+cardriver  string  
+carcolor   string  
+carmodel   string  
+status     boolean  
+
+- Отмена поездки
+  
+/orders/:id  PUT  
+
+status     boolean  
+
+
+
+
+
+
+
+
 
  
 
